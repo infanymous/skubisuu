@@ -50,12 +50,10 @@ export default function HomePage() {
                             </span>
                         </h1>
 
-                        <div className="mt-6 max-w-3xl rounded-2xl border border-gray-200 bg-white/90 backdrop-blur-sm p-4 shadow-sm">
-                            <p className="text-base sm:text-lg text-gray-900 leading-relaxed">
-                                Potrzebujesz lawety? Masz awarię, stłuczkę lub potrzebujesz holowania? Pomoc Drogowa Skubisuu R&amp;R
-                                 to gwarancja szybkiej i skutecznej pomocy 24 godziny na dobę, 7 dni w tygodniu.
-                            </p>
-                        </div>
+                        <p className="mt-6 text-lg sm:text-xl font-semibold leading-relaxed max-w-3xl text-white/95 drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)] lg:text-gray-900 lg:drop-shadow-none">
+                            Potrzebujesz lawety? Masz awarię, stłuczkę lub potrzebujesz holowania? Pomoc Drogowa Skubisuu R&amp;R
+                             to gwarancja szybkiej i skutecznej pomocy 24 godziny na dobę, 7 dni w tygodniu.
+                        </p>
 
                         <div className="mt-8 flex flex-col sm:flex-row gap-3">
                             <a
