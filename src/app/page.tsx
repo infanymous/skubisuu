@@ -9,7 +9,7 @@ export default function HomePage() {
         'https://www.google.com/maps/search/?api=1&query=Krak%C3%B3w%2C%20Ma%C5%82opolskie';
 
     return (
-        <div className="bg-white">
+        <div className="bg-transparent">
             {/* Sharp, geometric background (no blobs) */}
             <div className="relative isolate overflow-hidden">
 				<div aria-hidden className="pointer-events-none absolute inset-0 z-0">
