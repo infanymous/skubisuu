@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import ServiceTiles from '../components/ServiceTiles';
 
 export default function HomePage() {
     const phoneDisplay = '+48 123 456 789';
@@ -56,7 +57,11 @@ export default function HomePage() {
                         </div>
 
                         {/* Service area strip */}
-                        <div className="mt-8 rounded-2xl border border-gray-200 bg-white/80 px-5 py-4 shadow-sm">
+                        <div className="mt-8 relative overflow-hidden rounded-2xl border border-yellow-200/70 bg-white/85 backdrop-blur-sm px-5 py-4 shadow-lg">
+                            <div className="pointer-events-none absolute inset-0">
+                                <div className="absolute -left-24 top-1/2 h-40 w-40 -translate-y-1/2 rounded-full bg-yellow-400/30 blur-2xl" />
+                                <div className="absolute -right-24 top-1/2 h-40 w-40 -translate-y-1/2 rounded-full bg-red-500/25 blur-2xl" />
+                            </div>
                             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                                 <div>
                                     <div className="text-sm text-gray-600">Obszar działania</div>
@@ -68,7 +73,7 @@ export default function HomePage() {
                                         href={mapsHref}
                                         target="_blank"
                                         rel="noreferrer"
-                                        className="font-semibold text-red-700 hover:underline"
+                                        className="font-semibold text-red-700 hover:underline relative"
                                     >
                                         Kraków, Małopolskie → mapa
                                     </a>
@@ -77,15 +82,24 @@ export default function HomePage() {
                         </div>
 
                         <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
-                            <div className="rounded-lg border border-gray-200 bg-white/80 px-4 py-3">
+                            <div className="relative overflow-hidden rounded-xl border border-red-100 bg-white/85 backdrop-blur-sm px-4 py-4 shadow-md transition hover:-translate-y-0.5 hover:shadow-lg">
+                                <div className="pointer-events-none absolute inset-0">
+                                    <div className="absolute -left-10 -top-10 h-24 w-24 rounded-full bg-red-500/20 blur-2xl" />
+                                </div>
                                 <div className="font-semibold text-gray-900">Szybko</div>
                                 <div className="text-gray-600">Działamy sprawnie i bez stresu</div>
                             </div>
-                            <div className="rounded-lg border border-gray-200 bg-white/80 px-4 py-3">
+                            <div className="relative overflow-hidden rounded-xl border border-yellow-100 bg-white/85 backdrop-blur-sm px-4 py-4 shadow-md transition hover:-translate-y-0.5 hover:shadow-lg">
+                                <div className="pointer-events-none absolute inset-0">
+                                    <div className="absolute -right-10 -top-10 h-24 w-24 rounded-full bg-yellow-400/25 blur-2xl" />
+                                </div>
                                 <div className="font-semibold text-gray-900">Bezpiecznie</div>
                                 <div className="text-gray-600">Dbamy o Twój pojazd i spokój</div>
                             </div>
-                            <div className="rounded-lg border border-gray-200 bg-white/80 px-4 py-3">
+                            <div className="relative overflow-hidden rounded-xl border border-gray-200 bg-white/85 backdrop-blur-sm px-4 py-4 shadow-md transition hover:-translate-y-0.5 hover:shadow-lg">
+                                <div className="pointer-events-none absolute inset-0">
+                                    <div className="absolute left-1/2 -bottom-10 h-24 w-24 -translate-x-1/2 rounded-full bg-red-500/15 blur-2xl" />
+                                </div>
                                 <div className="font-semibold text-gray-900">Profesjonalnie</div>
                                 <div className="text-gray-600">Doświadczenie + dobry sprzęt</div>
                             </div>
@@ -106,49 +120,7 @@ export default function HomePage() {
                             dowóz paliwa, wymianę koła na trasie, likwidację szkód komunikacyjnych oraz samochód zastępczy z OC sprawcy.
                         </p>
 
-                        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                            {[
-                            {
-                                title: 'Holowanie (osobowe / dostawcze / TIR)',
-                                desc: 'Bezpieczny transport i pełna kontrola nad procesem.',
-                            },
-                            {
-                                title: 'Awaryjne uruchamianie',
-                                desc: 'Gdy akumulator zawiedzie — uruchomimy pojazd.',
-                            },
-                            {
-                                title: 'Dowóz paliwa',
-                                desc: 'Szybko dowieziemy paliwo tam, gdzie utknąłeś.',
-                            },
-                            {
-                                title: 'Wymiana koła w trasie',
-                                desc: 'Sprawna pomoc na poboczu — bez ryzyka.',
-                            },
-                            {
-                                title: 'Likwidacja szkód komunikacyjnych',
-                                desc: 'Pomagamy przejść przez formalności i działania na miejscu.',
-                            },
-                            {
-                                title: 'Samochód zastępczy z OC sprawcy',
-                                desc: 'Gdy sytuacja tego wymaga — pomożemy ruszyć dalej.',
-                            },
-                            ].map((card) => (
-                            <div
-                                key={card.title}
-                                className="group rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
-                            >
-                                <div className="flex items-start gap-3">
-                                    <div className="mt-0.5 h-10 w-10 rounded-lg bg-gradient-to-br from-red-600 to-yellow-500 opacity-90" />
-                                    <div>
-                                        <div className="font-semibold text-gray-900 group-hover:text-red-700">
-                                            {card.title}
-                                        </div>
-                                        <div className="mt-1 text-gray-600">{card.desc}</div>
-                                    </div>
-                                </div>
-                            </div>
-                            ))}
-                    </div>
+                        <ServiceTiles />
 
                     <div className="mt-10 rounded-2xl border border-yellow-200 bg-yellow-50/90 px-6 py-6">
                         <p className="text-gray-800 text-lg leading-relaxed">
