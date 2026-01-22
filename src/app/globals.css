@@ -1,52 +1,131 @@
-html, body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: white;
-    color: black;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    *, ::before, ::after {
+        box-sizing: border-box;
+    }
+
+    html, body {
+        height: 100%;
+    }
+
+    body {
+        @apply bg-white text-gray-900 antialiased;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        @apply text-red-600;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
 }
 
-h1, h2, h3, h4, h5, h6 {
-    color: red;
+@layer components {
+    /* Page layout helpers (used by existing pages) */
+    .home-container,
+    .about-page,
+    .contact-page,
+    .gallery-container {
+        @apply container mx-auto max-w-4xl px-4 py-10;
+    }
+
+    .home-container > p,
+    .about-page > p,
+    .contact-page > p,
+    .gallery-description {
+        @apply text-gray-700 leading-relaxed;
+    }
+
+    /* Gallery */
+    .gallery-title {
+        @apply text-3xl font-semibold mb-2;
+    }
+
+    .gallery-description {
+        @apply mb-6;
+    }
+
+    .gallery-images {
+        @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4;
+    }
+
+    .gallery-images img {
+        @apply w-full h-auto rounded-md border border-yellow-200 bg-gray-50;
+    }
+
+    /* Contact form */
+    .contact-page form {
+        @apply mt-6 space-y-4;
+    }
+
+    .contact-page form > div {
+        @apply flex flex-col gap-2;
+    }
+
+    .contact-page label {
+        @apply text-sm font-medium text-gray-800;
+    }
+
+    .contact-page input,
+    .contact-page textarea {
+        @apply w-full rounded-md border border-gray-300 px-3 py-2 outline-none focus:ring-2 focus:ring-red-200 focus:border-red-300;
+    }
+
+    .contact-page textarea {
+        @apply min-h-32;
+    }
+
+    .contact-page button[type="submit"] {
+        @apply inline-flex items-center justify-center rounded-md bg-red-600 px-4 py-2 text-white font-medium hover:bg-red-700;
+    }
 }
 
-a {
-    text-decoration: none;
-    color: yellow;
-}
+@layer utilities {
+    @keyframes gradient-shift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
 
-a:hover {
-    color: red;
-}
+    .animate-gradient {
+        background-size: 200% 200%;
+        animation: gradient-shift 10s ease infinite;
+    }
 
-.navbar {
-    background-color: red;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-around;
-}
+    @keyframes shine-sweep {
+        0% { transform: translateX(-120%) skewX(-20deg); opacity: 0; }
+        10% { opacity: 0.9; }
+        40% { opacity: 0; }
+        100% { transform: translateX(220%) skewX(-20deg); opacity: 0; }
+    }
 
-.footer {
-    background-color: red;
-    padding: 1rem;
-    text-align: center;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
+    /* Add a subtle moving shine to buttons/CTAs */
+    .btn-wow {
+        position: relative;
+        overflow: hidden;
+    }
 
-.container {
-    padding: 2rem;
-}
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 1rem;
-}
-
-.image {
-    width: 100%;
-    height: auto;
-    border: 2px solid yellow;
+    .btn-wow::after {
+        content: '';
+        position: absolute;
+        top: -20%;
+        bottom: -20%;
+        left: 0;
+        width: 45%;
+        background: linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.55) 50%,
+            rgba(255, 255, 255, 0) 100%
+        );
+        transform: translateX(-120%) skewX(-20deg);
+        opacity: 0;
+        animation: shine-sweep 4.5s ease-in-out infinite;
+        pointer-events: none;
+    }
 }
