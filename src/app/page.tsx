@@ -10,14 +10,29 @@ export default function HomePage() {
 
     return (
         <div className="bg-white">
-            {/* Shared background across hero + services (prevents hard cut) */}
+            {/* Sharp, geometric background (no blobs) */}
             <div className="relative isolate overflow-hidden">
-                <div className="pointer-events-none absolute inset-0 z-0">
-                    <div className="absolute -top-40 -left-40 h-[30rem] w-[30rem] rounded-full bg-red-500/50 blur-2xl mix-blend-multiply" />
-                    <div className="absolute top-20 -right-40 h-[32rem] w-[32rem] rounded-full bg-yellow-400/55 blur-2xl mix-blend-multiply" />
-                    <div className="absolute -bottom-56 left-1/3 h-[36rem] w-[36rem] rounded-full bg-red-600/30 blur-3xl mix-blend-multiply" />
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(0,0,0,0.04)_1px,transparent_1px)] [background-size:18px_18px]" />
-                </div>
+				<div aria-hidden className="pointer-events-none absolute inset-0 z-0">
+					{/* subtle grid */}
+                    <div className="absolute inset-0 opacity-25 bg-[linear-gradient(90deg,rgba(0,0,0,0.045)_1px,transparent_1px),linear-gradient(rgba(0,0,0,0.045)_1px,transparent_1px)] [background-size:22px_22px]" />
+
+					{/* red diagonal wedge */}
+					<div
+                        className="absolute -top-24 right-0 h-[44rem] w-[72%] bg-gradient-to-br from-red-950 via-red-800 to-red-600 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.08)]"
+						style={{ clipPath: 'polygon(40% 0, 100% 0, 100% 100%, 10% 100%)' }}
+					/>
+                    <div
+                        className="absolute -top-24 right-0 h-[44rem] w-[72%] opacity-25"
+                        style={{
+                            clipPath: 'polygon(40% 0, 100% 0, 100% 100%, 10% 100%)',
+                            background:
+                                'linear-gradient(115deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.00) 45%, rgba(0,0,0,0.20) 100%)',
+                        }}
+                    />
+
+					{/* yellow accent stripe */}
+                    <div className="absolute -top-40 right-24 h-[60rem] w-10 rotate-[12deg] bg-gradient-to-b from-amber-300 via-yellow-400 to-amber-500 shadow-[0_0_0_1px_rgba(0,0,0,0.12)]" />
+				</div>
 
                 {/* Hero */}
                 <section className="relative z-10">
@@ -35,10 +50,12 @@ export default function HomePage() {
                             </span>
                         </h1>
 
-                        <p className="mt-6 text-lg sm:text-xl text-gray-700 leading-relaxed max-w-3xl">
-                            Potrzebujesz lawety? Masz awarię, stłuczkę lub potrzebujesz holowania? Pomoc Drogowa Skubisuu R&amp;R
-                             to gwarancja szybkiej i skutecznej pomocy 24 godziny na dobę, 7 dni w tygodniu.
-                        </p>
+                        <div className="mt-6 max-w-3xl rounded-2xl border border-gray-200 bg-white/90 backdrop-blur-sm p-4 shadow-sm">
+                            <p className="text-base sm:text-lg text-gray-900 leading-relaxed">
+                                Potrzebujesz lawety? Masz awarię, stłuczkę lub potrzebujesz holowania? Pomoc Drogowa Skubisuu R&amp;R
+                                 to gwarancja szybkiej i skutecznej pomocy 24 godziny na dobę, 7 dni w tygodniu.
+                            </p>
+                        </div>
 
                         <div className="mt-8 flex flex-col sm:flex-row gap-3">
                             <a
@@ -57,11 +74,8 @@ export default function HomePage() {
                         </div>
 
                         {/* Service area strip */}
-                        <div className="mt-8 relative overflow-hidden rounded-2xl border border-yellow-200/70 bg-white/85 backdrop-blur-sm px-5 py-4 shadow-lg">
-                            <div className="pointer-events-none absolute inset-0">
-                                <div className="absolute -left-24 top-1/2 h-40 w-40 -translate-y-1/2 rounded-full bg-yellow-400/30 blur-2xl" />
-                                <div className="absolute -right-24 top-1/2 h-40 w-40 -translate-y-1/2 rounded-full bg-red-500/25 blur-2xl" />
-                            </div>
+                        <div className="mt-8 relative overflow-hidden rounded-2xl border border-yellow-200/80 bg-white/90 backdrop-blur-sm px-5 py-4 shadow-lg">
+                            <div className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-red-600 via-red-600 to-yellow-400" />
                             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                                 <div>
                                     <div className="text-sm text-gray-600">Obszar działania</div>
@@ -82,24 +96,18 @@ export default function HomePage() {
                         </div>
 
                         <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
-                            <div className="relative overflow-hidden rounded-xl border border-red-100 bg-white/85 backdrop-blur-sm px-4 py-4 shadow-md transition hover:-translate-y-0.5 hover:shadow-lg">
-                                <div className="pointer-events-none absolute inset-0">
-                                    <div className="absolute -left-10 -top-10 h-24 w-24 rounded-full bg-red-500/20 blur-2xl" />
-                                </div>
+                            <div className="relative overflow-hidden rounded-xl border border-red-200/70 bg-white/90 backdrop-blur-sm px-4 py-4 shadow-md transition hover:-translate-y-0.5 hover:shadow-lg">
+                                <div className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-red-600" />
                                 <div className="font-semibold text-gray-900">Szybko</div>
                                 <div className="text-gray-600">Działamy sprawnie i bez stresu</div>
                             </div>
-                            <div className="relative overflow-hidden rounded-xl border border-yellow-100 bg-white/85 backdrop-blur-sm px-4 py-4 shadow-md transition hover:-translate-y-0.5 hover:shadow-lg">
-                                <div className="pointer-events-none absolute inset-0">
-                                    <div className="absolute -right-10 -top-10 h-24 w-24 rounded-full bg-yellow-400/25 blur-2xl" />
-                                </div>
+                            <div className="relative overflow-hidden rounded-xl border border-yellow-200/80 bg-white/90 backdrop-blur-sm px-4 py-4 shadow-md transition hover:-translate-y-0.5 hover:shadow-lg">
+                                <div className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-yellow-400" />
                                 <div className="font-semibold text-gray-900">Bezpiecznie</div>
                                 <div className="text-gray-600">Dbamy o Twój pojazd i spokój</div>
                             </div>
-                            <div className="relative overflow-hidden rounded-xl border border-gray-200 bg-white/85 backdrop-blur-sm px-4 py-4 shadow-md transition hover:-translate-y-0.5 hover:shadow-lg">
-                                <div className="pointer-events-none absolute inset-0">
-                                    <div className="absolute left-1/2 -bottom-10 h-24 w-24 -translate-x-1/2 rounded-full bg-red-500/15 blur-2xl" />
-                                </div>
+                            <div className="relative overflow-hidden rounded-xl border border-gray-200 bg-white/90 backdrop-blur-sm px-4 py-4 shadow-md transition hover:-translate-y-0.5 hover:shadow-lg">
+                                <div className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-red-600 to-yellow-400" />
                                 <div className="font-semibold text-gray-900">Profesjonalnie</div>
                                 <div className="text-gray-600">Doświadczenie + dobry sprzęt</div>
                             </div>
@@ -108,8 +116,8 @@ export default function HomePage() {
                     </div>
                 </section>
 
-                {/* Soft fade into next content */}
-                <div className="pointer-events-none h-10 bg-gradient-to-b from-transparent to-white" />
+                {/* Crisp section divider */}
+                <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
 
                 {/* Services */}
                 <section className="relative z-10 container mx-auto px-4 pb-12 sm:pb-16">

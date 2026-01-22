@@ -89,7 +89,7 @@ export default function ServiceTiles() {
 						<div
 							className={
 								'mt-3 overflow-hidden transition-all duration-300 ease-out ' +
-								(isOpen ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0')
+								(isOpen ? 'max-h-[420px] opacity-100 pb-1' : 'max-h-0 opacity-0')
 							}
 						>
 							<p className="text-sm text-gray-700 leading-relaxed">{tile.extra}</p>
