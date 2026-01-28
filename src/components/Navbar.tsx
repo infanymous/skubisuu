@@ -34,11 +34,11 @@ export default function Navbar() {
 	};
 
 	return (
-		<header className="bg-white border-b border-gray-200 sticky top-0 z-50 overflow-visible">
+		<header className="bg-neutral-950 border-b border-neutral-800 sticky top-0 z-50 overflow-visible">
 			{/* Top info strip */}
-			<div className="border-b border-gray-100 bg-gradient-to-r from-green-50 via-white to-yellow-50">
+			<div className="border-b border-neutral-800 bg-gradient-to-r from-neutral-950 via-neutral-900 to-neutral-950">
 				<div className="container mx-auto px-4 py-2 flex items-center justify-between gap-4">
-					<div className="flex items-center gap-3 text-sm text-gray-700">
+					<div className="flex items-center gap-3 text-sm text-neutral-200">
 						<span className="inline-flex items-center rounded-full bg-green-600 px-2 py-0.5 text-xs font-semibold text-white">
 							24/7
 						</span>
@@ -49,7 +49,7 @@ export default function Navbar() {
 					<div className="flex items-center gap-3">
 						<a
 							href={phoneHref}
-							className="text-sm font-semibold text-gray-900 hover:text-green-700"
+							className="text-sm font-semibold text-neutral-100 hover:text-yellow-300"
 							aria-label={`Zadzwoń: ${phoneDisplay}`}
 						>
 							{phoneDisplay}
@@ -64,21 +64,21 @@ export default function Navbar() {
 				</div>
 			</div>
 
-			<nav className="container mx-auto px-4 py-4 flex items-center justify-between gap-4 overflow-visible">
+			<nav className="container mx-auto px-4 py-2 flex items-center justify-between gap-4 overflow-visible">
 				<div className="flex items-center gap-3">
 					<Link
 						href="/"
-						className="inline-flex items-center relative z-10 overflow-visible"
+						className="relative z-10 block h-10 w-44 sm:w-56 md:w-64 overflow-visible -ml-4 sm:-ml-8 md:-ml-12"
 						aria-label="My Company home"
 						onClick={() => setIsOpen(false)}
 					>
 						<Image
 							src="/images/brand/logo.svg"
 							alt="Logo"
-							width={320}
-							height={320}
+							width={520}
+							height={520}
 							priority
-							className="h-16 sm:h-20 md:h-28 w-auto translate-y-3 sm:translate-y-4 md:translate-y-6 drop-shadow-lg"
+							className="absolute left-0 top-[calc(100%+8px)] h-20 sm:h-24 md:h-32 w-auto -translate-x-4 sm:-translate-x-6 md:-translate-x-8 -translate-y-1/2 drop-shadow-lg"
 						/>
 					</Link>
 				</div>
@@ -93,8 +93,8 @@ export default function Navbar() {
 									href={item.href}
 									className={
 										active
-											? 'text-green-700 font-semibold'
-											: 'text-green-800 hover:text-yellow-600'
+											? 'text-yellow-300 font-semibold'
+											: 'text-neutral-200 hover:text-yellow-300'
 									}
 									aria-current={active ? 'page' : undefined}
 								>
@@ -108,7 +108,7 @@ export default function Navbar() {
 				{/* Mobile menu button */}
 				<button
 					type="button"
-					className="md:hidden inline-flex items-center justify-center rounded-md border border-gray-200 px-3 py-2 text-gray-700 hover:bg-gray-50"
+					className="md:hidden inline-flex items-center justify-center rounded-md border border-neutral-700 px-3 py-2 text-neutral-200 hover:bg-neutral-900"
 					aria-label={isOpen ? 'Close menu' : 'Open menu'}
 					aria-expanded={isOpen}
 					onClick={() => setIsOpen((v) => !v)}
@@ -143,7 +143,7 @@ export default function Navbar() {
 
 			{/* Mobile panel */}
 			{isOpen ? (
-				<div className="md:hidden border-t border-gray-200 bg-white">
+				<div className="md:hidden border-t border-neutral-800 bg-neutral-950">
 					<ul className="container mx-auto px-4 py-3 flex flex-col gap-2">
 						<li className="pb-2">
 							<a
@@ -153,7 +153,7 @@ export default function Navbar() {
 							>
 								Zadzwoń: {phoneDisplay}
 							</a>
-							<div className="mt-2 text-xs text-gray-600 text-center">Obsługujemy: {locationDisplay}</div>
+							<div className="mt-2 text-xs text-neutral-400 text-center">Obsługujemy: {locationDisplay}</div>
 						</li>
 
 						{items.map((item) => {
@@ -164,8 +164,8 @@ export default function Navbar() {
 										href={item.href}
 										className={
 											active
-												? 'block rounded-md px-3 py-2 text-green-700 font-semibold bg-green-50'
-												: 'block rounded-md px-3 py-2 text-green-800 hover:bg-gray-50 hover:text-yellow-600'
+												? 'block rounded-md px-3 py-2 text-yellow-300 font-semibold bg-neutral-900'
+												: 'block rounded-md px-3 py-2 text-neutral-200 hover:bg-neutral-900 hover:text-yellow-300'
 										}
 										aria-current={active ? 'page' : undefined}
 										onClick={() => setIsOpen(false)}
