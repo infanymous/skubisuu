@@ -1,5 +1,6 @@
 "use client";
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useMemo, useState } from 'react';
@@ -33,12 +34,12 @@ export default function Navbar() {
 	};
 
 	return (
-		<header className="bg-white border-b border-gray-200 sticky top-0 z-50">
+		<header className="bg-white border-b border-gray-200 sticky top-0 z-50 overflow-visible">
 			{/* Top info strip */}
-			<div className="border-b border-gray-100 bg-gradient-to-r from-red-50 via-white to-yellow-50">
+			<div className="border-b border-gray-100 bg-gradient-to-r from-green-50 via-white to-yellow-50">
 				<div className="container mx-auto px-4 py-2 flex items-center justify-between gap-4">
 					<div className="flex items-center gap-3 text-sm text-gray-700">
-						<span className="inline-flex items-center rounded-full bg-red-600 px-2 py-0.5 text-xs font-semibold text-white">
+						<span className="inline-flex items-center rounded-full bg-green-600 px-2 py-0.5 text-xs font-semibold text-white">
 							24/7
 						</span>
 						<span className="hidden sm:inline">Pomoc drogowa • {locationDisplay}</span>
@@ -48,14 +49,14 @@ export default function Navbar() {
 					<div className="flex items-center gap-3">
 						<a
 							href={phoneHref}
-							className="text-sm font-semibold text-gray-900 hover:text-red-700"
+							className="text-sm font-semibold text-gray-900 hover:text-green-700"
 							aria-label={`Zadzwoń: ${phoneDisplay}`}
 						>
 							{phoneDisplay}
 						</a>
 						<a
 							href={phoneHref}
-							className="hidden sm:inline-flex btn-wow rounded-md bg-red-600 px-4 py-2 text-sm font-semibold text-white hover:bg-red-700"
+							className="hidden sm:inline-flex btn-wow rounded-md bg-green-600 px-4 py-2 text-sm font-semibold text-white hover:bg-green-700"
 						>
 							Zadzwoń teraz
 						</a>
@@ -63,15 +64,22 @@ export default function Navbar() {
 				</div>
 			</div>
 
-			<nav className="container mx-auto px-4 py-4 flex items-center justify-between gap-4">
+			<nav className="container mx-auto px-4 py-4 flex items-center justify-between gap-4 overflow-visible">
 				<div className="flex items-center gap-3">
 					<Link
 						href="/"
-						className="text-red-600 font-semibold text-lg tracking-tight"
+						className="inline-flex items-center relative z-10 overflow-visible"
 						aria-label="My Company home"
 						onClick={() => setIsOpen(false)}
 					>
-						Skubisuu R&amp;R
+						<Image
+							src="/images/brand/logo.svg"
+							alt="Logo"
+							width={320}
+							height={320}
+							priority
+							className="h-16 sm:h-20 md:h-28 w-auto translate-y-3 sm:translate-y-4 md:translate-y-6 drop-shadow-lg"
+						/>
 					</Link>
 				</div>
 
@@ -85,8 +93,8 @@ export default function Navbar() {
 									href={item.href}
 									className={
 										active
-											? 'text-red-600 font-semibold'
-											: 'text-yellow-700 hover:text-red-600'
+											? 'text-green-700 font-semibold'
+											: 'text-green-800 hover:text-yellow-600'
 									}
 									aria-current={active ? 'page' : undefined}
 								>
@@ -140,7 +148,7 @@ export default function Navbar() {
 						<li className="pb-2">
 							<a
 								href={phoneHref}
-								className="btn-wow inline-flex w-full items-center justify-center rounded-md bg-red-600 px-4 py-3 text-white font-semibold hover:bg-red-700"
+								className="btn-wow inline-flex w-full items-center justify-center rounded-md bg-green-600 px-4 py-3 text-white font-semibold hover:bg-green-700"
 								onClick={() => setIsOpen(false)}
 							>
 								Zadzwoń: {phoneDisplay}
@@ -156,8 +164,8 @@ export default function Navbar() {
 										href={item.href}
 										className={
 											active
-												? 'block rounded-md px-3 py-2 text-red-600 font-semibold bg-red-50'
-												: 'block rounded-md px-3 py-2 text-yellow-700 hover:bg-gray-50 hover:text-red-600'
+												? 'block rounded-md px-3 py-2 text-green-700 font-semibold bg-green-50'
+												: 'block rounded-md px-3 py-2 text-green-800 hover:bg-gray-50 hover:text-yellow-600'
 										}
 										aria-current={active ? 'page' : undefined}
 										onClick={() => setIsOpen(false)}

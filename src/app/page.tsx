@@ -16,9 +16,9 @@ export default function HomePage() {
 					{/* subtle grid */}
                     <div className="absolute inset-0 opacity-25 bg-[linear-gradient(90deg,rgba(0,0,0,0.045)_1px,transparent_1px),linear-gradient(rgba(0,0,0,0.045)_1px,transparent_1px)] [background-size:22px_22px]" />
 
-					{/* red diagonal wedge */}
+                        {/* green diagonal wedge */}
 					<div
-                        className="absolute -top-24 right-0 h-[44rem] w-[72%] bg-gradient-to-br from-red-950 via-red-800 to-red-600 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.08)]"
+                            className="absolute -top-24 right-0 h-[44rem] w-[72%] bg-gradient-to-br from-green-950 via-green-800 to-green-600 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.08)]"
 						style={{ clipPath: 'polygon(40% 0, 100% 0, 100% 100%, 10% 100%)' }}
 					/>
                     <div
@@ -38,14 +38,14 @@ export default function HomePage() {
                 <section className="relative z-10">
                     <div className="container mx-auto px-4 py-14 sm:py-20">
                         <div className="mx-auto max-w-5xl">
-                        <div className="inline-flex items-center gap-2 rounded-full border border-red-100 bg-red-50 px-4 py-2 text-sm text-red-700">
+                            <div className="inline-flex items-center gap-2 rounded-full border border-green-100 bg-green-50 px-4 py-2 text-sm text-green-800">
                             <span className="font-semibold">24/7</span>
-                            <span className="text-red-700/80">Szybka i profesjonalna pomoc na drodze</span>
+                                <span className="text-green-800/80">Szybka i profesjonalna pomoc na drodze</span>
                         </div>
 
                         <h1 className="mt-6 text-4xl sm:text-6xl md:text-7xl font-extrabold leading-[1.05] tracking-tight">
                             <span className="block text-gray-900">Pomoc Drogowa</span>
-                            <span className="block bg-gradient-to-r from-red-600 via-red-600 to-yellow-500 bg-clip-text text-transparent animate-gradient">
+                                <span className="block bg-gradient-to-r from-green-600 via-green-600 to-yellow-500 bg-clip-text text-transparent animate-gradient">
                                 Skubisuu R&amp;R
                             </span>
                         </h1>
@@ -58,7 +58,7 @@ export default function HomePage() {
                         <div className="mt-8 flex flex-col sm:flex-row gap-3">
                             <a
                                 href={phoneHref}
-                                className="btn-wow inline-flex items-center justify-center rounded-md bg-red-600 px-6 py-3 text-white font-semibold hover:bg-red-700"
+                                    className="btn-wow inline-flex items-center justify-center rounded-md bg-green-600 px-6 py-3 text-white font-semibold hover:bg-green-700"
                                 aria-label={`Zadzwoń: ${phoneDisplay}`}
                             >
                                 Zadzwoń teraz: {phoneDisplay}
@@ -73,7 +73,7 @@ export default function HomePage() {
 
                         {/* Service area strip */}
                         <div className="mt-8 relative overflow-hidden rounded-2xl border border-yellow-200/80 bg-white/90 backdrop-blur-sm px-5 py-4 shadow-lg">
-                            <div className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-red-600 via-red-600 to-yellow-400" />
+                                <div className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-green-600 via-green-600 to-yellow-400" />
                             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                                 <div>
                                     <div className="text-sm text-gray-600">Obszar działania</div>
@@ -85,7 +85,7 @@ export default function HomePage() {
                                         href={mapsHref}
                                         target="_blank"
                                         rel="noreferrer"
-                                        className="font-semibold text-red-700 hover:underline relative"
+                                        className="font-semibold text-green-700 hover:underline relative"
                                     >
                                         Kraków, Małopolskie → mapa
                                     </a>
@@ -94,8 +94,8 @@ export default function HomePage() {
                         </div>
 
                         <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
-                            <div className="relative overflow-hidden rounded-xl border border-red-200/70 bg-white/90 backdrop-blur-sm px-4 py-4 shadow-md transition hover:-translate-y-0.5 hover:shadow-lg">
-                                <div className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-red-600" />
+                            <div className="relative overflow-hidden rounded-xl border border-green-200/70 bg-white/90 backdrop-blur-sm px-4 py-4 shadow-md transition hover:-translate-y-0.5 hover:shadow-lg">
+                                <div className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-green-600" />
                                 <div className="font-semibold text-gray-900">Szybko</div>
                                 <div className="text-gray-600">Działamy sprawnie i bez stresu</div>
                             </div>
@@ -105,7 +105,7 @@ export default function HomePage() {
                                 <div className="text-gray-600">Dbamy o Twój pojazd i spokój</div>
                             </div>
                             <div className="relative overflow-hidden rounded-xl border border-gray-200 bg-white/90 backdrop-blur-sm px-4 py-4 shadow-md transition hover:-translate-y-0.5 hover:shadow-lg">
-                                <div className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-red-600 to-yellow-400" />
+                                <div className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-green-600 to-yellow-400" />
                                 <div className="font-semibold text-gray-900">Profesjonalnie</div>
                                 <div className="text-gray-600">Doświadczenie + dobry sprzęt</div>
                             </div>
@@ -134,7 +134,7 @@ export default function HomePage() {
                             profesjonalny sprzęt pozwalają na sprawne rozwiązanie każdej sytuacji drogowej.
                         </p>
                         <div className="mt-4">
-                            <Link href="/contact" className="font-semibold text-red-700 hover:underline">
+                                    <Link href="/contact" className="font-semibold text-green-700 hover:underline">
                                 Zadzwoń i uzyskaj pomoc →
                             </Link>
                         </div>
@@ -146,7 +146,7 @@ export default function HomePage() {
             {/* Floating call button (mobile) */}
             <a
                 href={phoneHref}
-                className="md:hidden fixed bottom-5 right-5 z-50 rounded-full bg-red-600 text-white shadow-lg px-5 py-3 font-semibold btn-wow"
+                className="md:hidden fixed bottom-5 right-5 z-50 rounded-full bg-green-600 text-white shadow-lg px-5 py-3 font-semibold btn-wow"
                 aria-label={`Zadzwoń teraz: ${phoneDisplay}`}
             >
                 Zadzwoń
