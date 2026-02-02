@@ -31,7 +31,7 @@ const GalleryPage = () => {
 					<span className="text-secondary/80">zobacz nasze realizacje</span>
 				</div>
 
-				<h1 className="mt-6 text-4xl sm:text-5xl font-extrabold tracking-tight leading-[1.05] mb-2 bg-gradient-to-r from-secondary via-primary to-primary bg-clip-text text-transparent">
+				<h1 className="mt-6 text-4xl sm:text-5xl font-extrabold tracking-tight leading-[1.05] mb-2 bg-gradient-to-r from-primary via-secondary to-secondary bg-clip-text text-transparent">
 					Nasza galeria
 				</h1>
 				<p className="mt-4 text-lg font-semibold text-neutral-300 max-w-3xl">
