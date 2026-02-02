@@ -24,13 +24,6 @@ const GalleryPage = () => {
 	// If you later add an 11.webp, just insert it after 10.webp.
 
     return (
-<<<<<<< HEAD
-        <div className="gallery-container">
-            <h1 className="gallery-title">Gallery</h1>
-            <p className="gallery-description">Explore our collection of images showcasing our work and events.</p>
-			<GalleryGrid images={images} />
-        </div>
-=======
 		<div className="gallery-container">
 			<div className="mx-auto max-w-5xl">
 				<div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-white/70 backdrop-blur px-4 py-2 text-sm text-primary">
@@ -38,7 +31,7 @@ const GalleryPage = () => {
 					<span className="text-neutral-700">zobacz nasze realizacje</span>
 				</div>
 
-				<h1 className="mt-6 text-4xl sm:text-5xl font-extrabold tracking-tight text-neutral-900">
+				<h1 className="mt-6 text-4xl sm:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary via-secondary to-secondary bg-clip-text text-transparent">
 					Nasza galeria
 				</h1>
 				<p className="mt-4 text-lg font-semibold text-neutral-700 max-w-3xl">
@@ -58,7 +51,6 @@ const GalleryPage = () => {
 				</div>
 			</div>
 		</div>
->>>>>>> e6a4b4a (changes to text)
     );
 };
 

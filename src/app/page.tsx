@@ -45,14 +45,17 @@ export default function HomePage() {
 
                         <h1 className="mt-6 text-4xl sm:text-6xl md:text-7xl font-extrabold leading-[1.05] tracking-tight">
                             <span className="block text-neutral-50">Pomoc Drogowa</span>
-                                <span className="block bg-gradient-to-r from-primary via-primary to-secondary bg-clip-text text-transparent animate-gradient">
-                                Skubisuu R&amp;R
+                                <span className="block bg-gradient-to-r from-secondary via-primary to-primary bg-clip-text text-transparent">
+                                Skubisuu Racing &amp; Rent
                             </span>
                         </h1>
 
-                        <p className="mt-6 text-lg sm:text-xl font-semibold leading-relaxed max-w-3xl text-neutral-200">
+                        <p
+                            className="mt-6 text-lg sm:text-xl font-semibold leading-relaxed max-w-3xl text-neutral-100"
+                            style={{ textShadow: '0 3px 10px rgba(0,0,0,0.85)' }}
+                        >
                             Potrzebujesz lawety? Masz awarię, stłuczkę lub potrzebujesz holowania? Pomoc Drogowa Skubisuu R&amp;R
-                             to gwarancja szybkiej i skutecznej pomocy 24 godziny na dobę, 7 dni w tygodniu.
+                            to gwarancja szybkiej i skutecznej pomocy 24 godziny na dobę, 7 dni w tygodniu.
                         </p>
 
                         <div className="mt-8 flex flex-col sm:flex-row gap-3">

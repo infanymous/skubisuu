@@ -15,7 +15,7 @@ const ContactPage = () => {
                     <span className="text-neutral-700">jesteśmy dostępni 24/7</span>
                 </div>
 
-                <h1 className="mt-6 text-4xl sm:text-5xl font-extrabold tracking-tight text-neutral-900">
+                <h1 className="mt-6 text-4xl sm:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary via-secondary to-secondary bg-clip-text text-transparent">
                     Skontaktuj się z nami
                 </h1>
                 <p className="mt-4 text-lg font-semibold text-neutral-700 max-w-3xl">
