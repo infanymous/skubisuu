@@ -31,7 +31,7 @@ export default function HomePage() {
                     />
 
                     {/* yellow accent stripe */}
-                    <div className="absolute -top-40 right-24 h-[60rem] w-10 rotate-[12deg] bg-gradient-to-b from-secondary via-secondary to-primary shadow-[0_0_0_1px_rgba(0,0,0,0.12)]" />
+                    
 				</div>
 
                 {/* Hero */}
@@ -45,7 +45,7 @@ export default function HomePage() {
 
                         <h1 className="mt-6 text-4xl sm:text-6xl md:text-7xl font-extrabold leading-[1.05] tracking-tight">
                             <span className="block text-neutral-50">Pomoc Drogowa</span>
-                                <span className="block bg-gradient-to-r from-secondary via-primary to-primary bg-clip-text text-transparent">
+                                <span className="block pb-2 sm:pb-3 bg-gradient-to-r from-secondary via-primary to-primary bg-clip-text text-transparent">
                                 Skubisuu Racing &amp; Rent
                             </span>
                         </h1>

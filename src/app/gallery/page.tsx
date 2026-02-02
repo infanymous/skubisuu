@@ -26,18 +26,18 @@ const GalleryPage = () => {
     return (
 		<div className="gallery-container">
 			<div className="mx-auto max-w-5xl">
-				<div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-white/70 backdrop-blur px-4 py-2 text-sm text-primary">
+				<div className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-4 py-2 text-sm text-secondary">
 					<span className="font-semibold">Galeria</span>
-					<span className="text-neutral-700">zobacz nasze realizacje</span>
+					<span className="text-secondary/80">zobacz nasze realizacje</span>
 				</div>
 
-				<h1 className="mt-6 text-4xl sm:text-5xl font-extrabold tracking-tight text-neutral-900">
+				<h1 className="mt-6 text-4xl sm:text-5xl font-extrabold tracking-tight leading-[1.05] mb-2 bg-gradient-to-r from-secondary via-primary to-primary bg-clip-text text-transparent">
 					Nasza galeria
 				</h1>
-				<p className="mt-4 text-lg font-semibold text-neutral-700 max-w-3xl">
+				<p className="mt-4 text-lg font-semibold text-neutral-300 max-w-3xl">
 					Witamy w naszej galerii, gdzie na bieżąco dodajemy fotki z naszych akcji!
 				</p>
-				<div className="mt-8 rounded-3xl border border-neutral-200 bg-white/80 backdrop-blur-sm px-5 py-6 shadow-sm">
+				<div className="mt-8 rounded-3xl border border-neutral-800 bg-neutral-950/60 backdrop-blur-sm px-5 py-6 shadow-sm">
 					<div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
 						<div className="text-sm text-neutral-600">
 							Kliknij zdjęcie, aby otworzyć podgląd.
@@ -46,7 +46,7 @@ const GalleryPage = () => {
 							Potrzebujesz pomocy? Skontaktuj się →
 						</Link>
 					</div>
-					<div className="h-px bg-gradient-to-r from-transparent via-neutral-200 to-transparent mb-6" />
+					<div className="h-px bg-gradient-to-r from-transparent via-neutral-800 to-transparent mb-6" />
 					<GalleryGrid images={images} />
 				</div>
 			</div>
