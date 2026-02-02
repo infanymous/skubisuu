@@ -1,9 +1,12 @@
-module.exports = {
+const isProd = process.env.NODE_ENV === 'production';
+const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['your-image-domain.com'], // Replace with your image domain if needed
+    unoptimized: true, // Disable default image optimization
   },
-  env: {
-    CMS_URL: process.env.CMS_URL, // Example environment variable for CMS
-  },
+  assetPrefix: isProd ? '/skubisuu/' : '',
+  basePath: isProd ? '/skubisuu' : '',
+  output: 'export'
 };
+
+export default nextConfig;
