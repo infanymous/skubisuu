@@ -63,8 +63,8 @@ export default function ServiceTiles() {
 						type="button"
 						className={
 							'group text-left rounded-xl border border-neutral-800 bg-neutral-900/80 p-5 shadow-sm transition ' +
-							'hover:-translate-y-0.5 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-green-200 cursor-pointer ' +
-							(isOpen ? 'ring-1 ring-green-200' : '')
+							'hover:-translate-y-0.5 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-secondary/40 cursor-pointer ' +
+							(isOpen ? 'ring-1 ring-secondary/40' : '')
 						}
 						aria-expanded={isOpen}
 						onClick={() =>
@@ -77,9 +77,9 @@ export default function ServiceTiles() {
 						}
 					>
 						<div className="flex items-start gap-3">
-							<div className="mt-0.5 h-10 w-10 rounded-lg bg-gradient-to-br from-green-600 to-yellow-500 opacity-95" />
+							<div className="mt-0.5 h-10 w-10 rounded-lg bg-gradient-to-br from-primary to-secondary opacity-95" />
 							<div className="min-w-0">
-								<div className="font-semibold text-neutral-50 group-hover:text-yellow-300">
+								<div className="font-semibold text-neutral-50 group-hover:text-secondary">
 									{tile.title}
 								</div>
 								<div className="mt-1 text-neutral-300">{tile.desc}</div>
@@ -93,7 +93,7 @@ export default function ServiceTiles() {
 							}
 						>
 							<p className="text-sm text-neutral-300 leading-relaxed">{tile.extra}</p>
-							<div className="mt-3 text-xs font-semibold text-green-700">Kliknij ponownie, aby zwinąć</div>
+							<div className="mt-3 text-xs font-semibold text-primary/90">Kliknij ponownie, aby zwinąć</div>
 						</div>
 					</button>
 				);

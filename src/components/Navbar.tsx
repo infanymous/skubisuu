@@ -20,10 +20,10 @@ export default function Navbar() {
 
 	const items: NavItem[] = useMemo(
 		() => [
-			{ label: 'Home', href: '/' },
-			{ label: 'About', href: '/about' },
-			{ label: 'Gallery', href: '/gallery' },
-			{ label: 'Contact', href: '/contact' },
+			{ label: 'Start', href: '/' },
+			{ label: 'O nas', href: '/about' },
+			{ label: 'Galeria', href: '/gallery' },
+			{ label: 'Kontakt', href: '/contact' },
 		],
 		[]
 	);
@@ -39,7 +39,7 @@ export default function Navbar() {
 			<div className="border-b border-neutral-800 bg-gradient-to-r from-neutral-950 via-neutral-900 to-neutral-950">
 				<div className="container mx-auto px-4 py-2 flex items-center justify-between gap-4">
 					<div className="flex items-center gap-3 text-sm text-neutral-200">
-						<span className="inline-flex items-center rounded-full bg-green-600 px-2 py-0.5 text-xs font-semibold text-white">
+						<span className="inline-flex items-center rounded-full bg-primary px-2 py-0.5 text-xs font-semibold text-white">
 							24/7
 						</span>
 						<span className="hidden sm:inline">Pomoc drogowa • {locationDisplay}</span>
@@ -49,14 +49,14 @@ export default function Navbar() {
 					<div className="flex items-center gap-3">
 						<a
 							href={phoneHref}
-							className="text-sm font-semibold text-neutral-100 hover:text-yellow-300"
+							className="text-sm font-semibold text-neutral-100 hover:text-secondary"
 							aria-label={`Zadzwoń: ${phoneDisplay}`}
 						>
 							{phoneDisplay}
 						</a>
 						<a
 							href={phoneHref}
-							className="hidden sm:inline-flex btn-wow rounded-md bg-green-600 px-4 py-2 text-sm font-semibold text-white hover:bg-green-700"
+							className="hidden sm:inline-flex btn-wow rounded-md bg-primary px-4 py-2 text-sm font-semibold text-white hover:bg-primary/90"
 						>
 							Zadzwoń teraz
 						</a>
@@ -93,8 +93,8 @@ export default function Navbar() {
 									href={item.href}
 									className={
 										active
-											? 'text-yellow-300 font-semibold'
-											: 'text-neutral-200 hover:text-yellow-300'
+											? 'text-secondary font-semibold'
+											: 'text-neutral-200 hover:text-secondary'
 									}
 									aria-current={active ? 'page' : undefined}
 								>
@@ -148,7 +148,7 @@ export default function Navbar() {
 						<li className="pb-2">
 							<a
 								href={phoneHref}
-								className="btn-wow inline-flex w-full items-center justify-center rounded-md bg-green-600 px-4 py-3 text-white font-semibold hover:bg-green-700"
+									className="btn-wow inline-flex w-full items-center justify-center rounded-md bg-primary px-4 py-3 text-white font-semibold hover:bg-primary/90"
 								onClick={() => setIsOpen(false)}
 							>
 								Zadzwoń: {phoneDisplay}
@@ -164,8 +164,8 @@ export default function Navbar() {
 										href={item.href}
 										className={
 											active
-												? 'block rounded-md px-3 py-2 text-yellow-300 font-semibold bg-neutral-900'
-												: 'block rounded-md px-3 py-2 text-neutral-200 hover:bg-neutral-900 hover:text-yellow-300'
+													? 'block rounded-md px-3 py-2 text-secondary font-semibold bg-neutral-900'
+													: 'block rounded-md px-3 py-2 text-neutral-200 hover:bg-neutral-900 hover:text-secondary'
 										}
 										aria-current={active ? 'page' : undefined}
 										onClick={() => setIsOpen(false)}

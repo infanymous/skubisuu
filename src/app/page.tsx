@@ -18,7 +18,7 @@ export default function HomePage() {
 
                         {/* green diagonal wedge */}
 					<div
-                            className="absolute -top-24 right-0 h-[44rem] w-[72%] bg-gradient-to-br from-green-950 via-green-800 to-green-600 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.08)]"
+                        className="absolute -top-24 right-0 h-[44rem] w-[72%] bg-gradient-to-br from-primary to-secondary shadow-[inset_0_0_0_1px_rgba(255,255,255,0.08)]"
 						style={{ clipPath: 'polygon(40% 0, 100% 0, 100% 100%, 10% 100%)' }}
 					/>
                     <div
@@ -30,22 +30,22 @@ export default function HomePage() {
                         }}
                     />
 
-					{/* yellow accent stripe */}
-                    <div className="absolute -top-40 right-24 h-[60rem] w-10 rotate-[12deg] bg-gradient-to-b from-amber-300 via-yellow-400 to-amber-500 shadow-[0_0_0_1px_rgba(0,0,0,0.12)]" />
+                    {/* yellow accent stripe */}
+                    <div className="absolute -top-40 right-24 h-[60rem] w-10 rotate-[12deg] bg-gradient-to-b from-secondary via-secondary to-primary shadow-[0_0_0_1px_rgba(0,0,0,0.12)]" />
 				</div>
 
                 {/* Hero */}
                 <section className="relative z-10">
                     <div className="container mx-auto px-4 py-14 sm:py-20">
                         <div className="mx-auto max-w-5xl">
-                            <div className="inline-flex items-center gap-2 rounded-full border border-green-500/20 bg-green-500/10 px-4 py-2 text-sm text-green-200">
+                            <div className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-4 py-2 text-sm text-secondary">
                             <span className="font-semibold">24/7</span>
-                                <span className="text-green-200/80">Szybka i profesjonalna pomoc na drodze</span>
+                                <span className="text-secondary/80">Szybka i profesjonalna pomoc na drodze</span>
                         </div>
 
                         <h1 className="mt-6 text-4xl sm:text-6xl md:text-7xl font-extrabold leading-[1.05] tracking-tight">
                             <span className="block text-neutral-50">Pomoc Drogowa</span>
-                                <span className="block bg-gradient-to-r from-green-600 via-green-600 to-yellow-500 bg-clip-text text-transparent animate-gradient">
+                                <span className="block bg-gradient-to-r from-primary via-primary to-secondary bg-clip-text text-transparent animate-gradient">
                                 Skubisuu R&amp;R
                             </span>
                         </h1>
@@ -58,7 +58,7 @@ export default function HomePage() {
                         <div className="mt-8 flex flex-col sm:flex-row gap-3">
                             <a
                                 href={phoneHref}
-                                    className="btn-wow inline-flex items-center justify-center rounded-md bg-green-600 px-6 py-3 text-white font-semibold hover:bg-green-700"
+                                className="btn-wow inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-white font-semibold hover:bg-primary/90"
                                 aria-label={`Zadzwoń: ${phoneDisplay}`}
                             >
                                 Zadzwoń teraz: {phoneDisplay}
@@ -73,7 +73,7 @@ export default function HomePage() {
 
                         {/* Service area strip */}
                         <div className="mt-8 relative overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900/70 backdrop-blur-sm px-5 py-4 shadow-lg">
-                                <div className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-green-600 via-green-600 to-yellow-400" />
+                                <div className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary via-primary to-secondary" />
                             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                                 <div>
                                     <div className="text-sm text-neutral-400">Obszar działania</div>
@@ -85,7 +85,7 @@ export default function HomePage() {
                                         href={mapsHref}
                                         target="_blank"
                                         rel="noreferrer"
-                                        className="font-semibold text-yellow-300 hover:underline relative"
+                                        className="font-semibold text-secondary hover:underline relative"
                                     >
                                         Kraków, Małopolskie → mapa
                                     </a>
@@ -95,17 +95,17 @@ export default function HomePage() {
 
                         <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
                             <div className="relative overflow-hidden rounded-xl border border-neutral-800 bg-neutral-900/70 backdrop-blur-sm px-4 py-4 shadow-md transition hover:-translate-y-0.5 hover:shadow-lg">
-                                <div className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-green-600" />
+                                <div className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-primary" />
                                 <div className="font-semibold text-neutral-100">Szybko</div>
                                 <div className="text-neutral-300">Działamy sprawnie i bez stresu</div>
                             </div>
                             <div className="relative overflow-hidden rounded-xl border border-neutral-800 bg-neutral-900/70 backdrop-blur-sm px-4 py-4 shadow-md transition hover:-translate-y-0.5 hover:shadow-lg">
-                                <div className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-yellow-400" />
+                                <div className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-secondary" />
                                 <div className="font-semibold text-neutral-100">Bezpiecznie</div>
                                 <div className="text-neutral-300">Dbamy o Twój pojazd i spokój</div>
                             </div>
                             <div className="relative overflow-hidden rounded-xl border border-neutral-800 bg-neutral-900/70 backdrop-blur-sm px-4 py-4 shadow-md transition hover:-translate-y-0.5 hover:shadow-lg">
-                                <div className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-green-600 to-yellow-400" />
+                                <div className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary to-secondary" />
                                 <div className="font-semibold text-neutral-100">Profesjonalnie</div>
                                 <div className="text-neutral-300">Doświadczenie + dobry sprzęt</div>
                             </div>
@@ -128,13 +128,13 @@ export default function HomePage() {
 
                         <ServiceTiles />
 
-                    <div className="mt-10 rounded-2xl border border-yellow-400/30 bg-yellow-400/10 px-6 py-6">
+                        <div className="mt-10 rounded-2xl border border-secondary/30 bg-secondary/10 px-6 py-6">
                         <p className="text-neutral-200 text-lg leading-relaxed">
                             Działamy szybko i niezawodnie, dbając o bezpieczeństwo Twojego pojazdu. Nasze doświadczenie i
                             profesjonalny sprzęt pozwalają na sprawne rozwiązanie każdej sytuacji drogowej.
                         </p>
                         <div className="mt-4">
-                                <Link href="/contact" className="font-semibold text-yellow-300 hover:underline">
+                                    <Link href="/contact" className="font-semibold text-secondary hover:underline">
                                 Zadzwoń i uzyskaj pomoc →
                             </Link>
                         </div>
@@ -146,7 +146,7 @@ export default function HomePage() {
             {/* Floating call button (mobile) */}
             <a
                 href={phoneHref}
-                className="md:hidden fixed bottom-5 right-5 z-50 rounded-full bg-green-600 text-white shadow-lg px-5 py-3 font-semibold btn-wow"
+                className="md:hidden fixed bottom-5 right-5 z-50 rounded-full bg-primary text-white shadow-lg px-5 py-3 font-semibold btn-wow hover:bg-primary/90"
                 aria-label={`Zadzwoń teraz: ${phoneDisplay}`}
             >
                 Zadzwoń

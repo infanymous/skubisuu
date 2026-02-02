@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
                         <div className="text-lg font-semibold text-neutral-100">Pomoc Drogowa Skubisuu R&amp;R</div>
                         <div className="mt-2 text-neutral-300">24/7 • {locationDisplay}</div>
                         <div className="mt-3 flex flex-wrap gap-3">
-                            <a href={phoneHref} className="font-semibold text-yellow-300 hover:underline">
+                            <a href={phoneHref} className="font-semibold text-secondary hover:underline">
                                 {phoneDisplay}
                             </a>
                             <a href={mapsHref} target="_blank" rel="noreferrer" className="text-neutral-300 hover:underline">
@@ -28,10 +28,10 @@ const Footer: React.FC = () => {
                         <div>
                             <div className="text-sm font-semibold text-neutral-100">Nawigacja</div>
                             <ul className="mt-3 space-y-2 text-neutral-300">
-                                <li><Link className="hover:text-yellow-300" href="/">Home</Link></li>
-                                <li><Link className="hover:text-yellow-300" href="/about">About</Link></li>
-                                <li><Link className="hover:text-yellow-300" href="/gallery">Gallery</Link></li>
-                                <li><Link className="hover:text-yellow-300" href="/contact">Contact</Link></li>
+                                <li><Link className="hover:text-secondary" href="/">Home</Link></li>
+                                <li><Link className="hover:text-secondary" href="/about">About</Link></li>
+                                <li><Link className="hover:text-secondary" href="/gallery">Gallery</Link></li>
+                                <li><Link className="hover:text-secondary" href="/contact">Contact</Link></li>
                             </ul>
                         </div>
                     </div>

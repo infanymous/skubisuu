@@ -61,7 +61,7 @@ export default function GalleryGrid({ images }: Props) {
 						key={img.src}
 						type="button"
 						onClick={() => setActiveIndex(index)}
-						className="group relative overflow-hidden rounded-md border border-neutral-800 bg-neutral-900 focus:outline-none focus:ring-2 focus:ring-yellow-300/40"
+						className="group relative overflow-hidden rounded-md border border-neutral-800 bg-neutral-900 focus:outline-none focus:ring-2 focus:ring-secondary/40"
 						aria-label={`Open image ${index + 1} of ${images.length}`}
 					>
 						<div className="relative aspect-[4/3]">
