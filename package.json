@@ -1,9 +1,12 @@
 {
+  "homepage": "https://infanymous.github.io/skubisuu",
   "name": "my-company-website",
   "version": "1.0.0",
   "description": "A modern company website with a CMS for easy content management.",
   "main": "index.js",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
