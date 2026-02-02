@@ -4,13 +4,14 @@
   "version": "1.0.0",
   "description": "A modern company website with a CMS for easy content management.",
   "main": "index.js",
+  "private": true,
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d .next/static",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "next lint",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d out"
   },
   "keywords": [
     "nextjs",

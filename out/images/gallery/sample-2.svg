@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1066" viewBox="0 0 1600 1066" role="img" aria-label="Gallery placeholder 2">
+  <defs>
+    <linearGradient id="bg" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="0.55" stop-color="#ECFDF5"/>
+      <stop offset="1" stop-color="#FEF9C3"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1066" fill="url(#bg)"/>
+  <rect x="72" y="72" width="1456" height="922" rx="48" fill="#FFFFFF" stroke="#FDE68A" stroke-width="6"/>
+  <g fill="#14532D" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial">
+    <text x="140" y="210" font-size="56" font-weight="800">Gallery Photo 2</text>
+    <text x="140" y="280" font-size="26" opacity="0.8">Drop your optimized WebP/AVIF into public/images/gallery.</text>
+  </g>
+  <g opacity="0.22">
+    <rect x="240" y="420" width="1120" height="420" rx="34" fill="#16A34A"/>
+    <rect x="340" y="500" width="920" height="120" rx="22" fill="#FACC15"/>
+    <circle cx="520" cy="700" r="70" fill="#FFFFFF"/>
+  </g>
+</svg>
