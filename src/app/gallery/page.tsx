@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import GalleryGrid, { type GalleryImage } from '../../components/GalleryGrid';
 
@@ -23,11 +24,41 @@ const GalleryPage = () => {
 	// If you later add an 11.webp, just insert it after 10.webp.
 
     return (
+<<<<<<< HEAD
         <div className="gallery-container">
             <h1 className="gallery-title">Gallery</h1>
             <p className="gallery-description">Explore our collection of images showcasing our work and events.</p>
 			<GalleryGrid images={images} />
         </div>
+=======
+		<div className="gallery-container">
+			<div className="mx-auto max-w-5xl">
+				<div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-white/70 backdrop-blur px-4 py-2 text-sm text-primary">
+					<span className="font-semibold">Galeria</span>
+					<span className="text-neutral-700">zobacz nasze realizacje</span>
+				</div>
+
+				<h1 className="mt-6 text-4xl sm:text-5xl font-extrabold tracking-tight text-neutral-900">
+					Nasza galeria
+				</h1>
+				<p className="mt-4 text-lg font-semibold text-neutral-700 max-w-3xl">
+					Witamy w naszej galerii, gdzie na bieżąco dodajemy fotki z naszych akcji!
+				</p>
+				<div className="mt-8 rounded-3xl border border-neutral-200 bg-white/80 backdrop-blur-sm px-5 py-6 shadow-sm">
+					<div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+						<div className="text-sm text-neutral-600">
+							Kliknij zdjęcie, aby otworzyć podgląd.
+						</div>
+						<Link href="/contact" className="font-semibold text-primary hover:underline">
+							Potrzebujesz pomocy? Skontaktuj się →
+						</Link>
+					</div>
+					<div className="h-px bg-gradient-to-r from-transparent via-neutral-200 to-transparent mb-6" />
+					<GalleryGrid images={images} />
+				</div>
+			</div>
+		</div>
+>>>>>>> e6a4b4a (changes to text)
     );
 };
 
