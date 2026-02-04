@@ -24,7 +24,7 @@ const ContactPage = () => {
                 <p className="mt-4 text-lg font-semibold text-neutral-300 max-w-3xl">
                     Jeśli potrzebujesz pomocy na drodze — zadzwoń! Zawsze jesteśmy dostępni, aby Ci pomóc.
                 </p>
-                
+
                 <div className="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-6">
                     <div className="lg:col-span-2 rounded-3xl border border-neutral-800 bg-neutral-950/60 backdrop-blur-sm px-6 py-8 shadow-sm">
                         <form>
@@ -74,7 +74,7 @@ const ContactPage = () => {
                 <div id="map" className="mt-8 mx-auto max-w-5xl">
                     <div className="rounded-3xl overflow-hidden border border-neutral-800">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2134.158995395767!2d19.375711054178208!3d50.27959651149277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc357eb8d31e4a61%3A0xabeea0f253577a7a!2sPOMOC%20DROGOWA%2FWYPO%C5%BBYCZALNIA%20LAWET%20Skubisuu%20Racing%26Rent%20Jakub%20Skubis!5e1!3m2!1spl!2spl!4v1770236357740!5m2!1spl!2spl"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1286.9133154711844!2d19.37656124302545!3d50.27918124380974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc357eb8d31e4a61%3A0xabeea0f253577a7a!2sPOMOC%20DROGOWA%2FWYPO%C5%BBYCZALNIA%20LAWET%20Skubisuu%20Racing%26Rent%20Jakub%20Skubis!5e0!3m2!1spl!2spl!4v1770237371542!5m2!1spl!2spl"
                             width="600"
                             height="450"
                             style={{ border: 0 }}
