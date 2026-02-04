@@ -4,7 +4,8 @@ import ServiceTiles from '../components/ServiceTiles';
 export default function HomePage() {
     const phoneDisplay = '+48 123 456 789';
     const phoneHref = 'tel:+48123456789';
-    const locationDisplay = 'Kraków, Małopolskie';
+    const locationDisplay1stline = 'Sławków, Bolesław, Bukowno';
+    const locationDisplay2ndline = 'Klucze, Olkusz, Dąbrowa Górnicza';
     const mapsHref =
         'https://www.google.com/maps/search/?api=1&query=Krak%C3%B3w%2C%20Ma%C5%82opolskie';
 
@@ -80,17 +81,16 @@ export default function HomePage() {
                             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                                 <div>
                                     <div className="text-sm text-neutral-400">Obszar działania</div>
-                                    <div className="text-lg font-semibold text-neutral-100">{locationDisplay}</div>
+                                    <div className="text-lg font-semibold text-neutral-100">{locationDisplay1stline}</div>
+                                    <div className="text-lg font-semibold text-neutral-100">{locationDisplay2ndline}</div>
                                 </div>
                                 <div className="flex flex-col sm:items-end">
-                                    <div className="text-sm text-neutral-400">Przykładowy adres</div>
+                                    <div className="text-sm text-neutral-400">Tutaj jesteśmy:</div>
                                     <a
-                                        href={mapsHref}
-                                        target="_blank"
-                                        rel="noreferrer"
+                                        href="/contact#map"
                                         className="font-semibold text-secondary hover:underline relative"
                                     >
-                                        Kraków, Małopolskie → mapa
+                                        Znajdź nas na mapie →
                                     </a>
                                 </div>
                             </div>

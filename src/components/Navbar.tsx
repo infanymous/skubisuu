@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useRef, useEffect } from 'react';
 
 type NavItem = {
 	label: string;
@@ -16,7 +16,23 @@ export default function Navbar() {
 
 	const phoneDisplay = '+48 123 456 789';
 	const phoneHref = 'tel:+48123456789';
-	const locationDisplay = 'Kraków, Małopolskie';
+	const serviceAreas = ['Sławków', 'Bolesław', 'Bukowno', 'Klucze', 'Olkusz', 'Dąbrowa Górnicza'];
+	const primaryArea = serviceAreas[0];
+	const extraAreas = serviceAreas.length - 1;
+
+	const [showAreas, setShowAreas] = useState(false);
+	const areasRef = useRef<HTMLDivElement | null>(null);
+
+	useEffect(() => {
+		if (!showAreas) return;
+		const onDocDown = (e: MouseEvent) => {
+			if (!areasRef.current) return;
+			if (!(e.target instanceof Node)) return;
+			if (!areasRef.current.contains(e.target)) setShowAreas(false);
+		};
+		document.addEventListener('mousedown', onDocDown);
+		return () => document.removeEventListener('mousedown', onDocDown);
+	}, [showAreas]);
 
 	const items: NavItem[] = useMemo(
 		() => [
@@ -42,8 +58,54 @@ export default function Navbar() {
 						<span className="inline-flex items-center rounded-full bg-primary px-2 py-0.5 text-xs font-semibold text-white">
 							24/7
 						</span>
-						<span className="hidden sm:inline">Pomoc drogowa • {locationDisplay}</span>
-						<span className="sm:hidden">{locationDisplay}</span>
+
+						{/* Desktop / tablet: inline mini-list */}
+						<div className="hidden sm:flex items-center gap-3 min-w-0">
+							<span className="font-semibold text-neutral-300 whitespace-nowrap text-sm leading-tight">Pomoc drogowa •</span>
+							<ul className="flex items-center gap-2 whitespace-nowrap overflow-x-auto">
+								{serviceAreas.map((c, i) => (
+									<li key={c} className="text-neutral-300 text-sm inline-flex items-center gap-2 leading-tight">
+										<span className="whitespace-nowrap leading-tight">{c}</span>
+										{i < serviceAreas.length - 1 ? <span className="text-neutral-500">•</span> : null}
+									</li>
+								))}
+							</ul>
+						</div>
+
+						{/* Mobile: first area + summary + dropdown */}
+						<div className="sm:hidden relative ">
+							
+							{extraAreas > 0 ? (
+								<button
+									type="button"
+									aria-expanded={showAreas}
+									aria-controls="service-areas-list"
+									onClick={() => setShowAreas((v) => !v)}
+									className="ml-2 text-neutral-500 text-sm font-medium"
+								>
+									<span className="text-neutral-300 font-semibold">{primaryArea}</span> • +{extraAreas}
+								</button>
+							) : null}
+
+							{showAreas ? (
+								<div
+									id="service-areas-list"
+									ref={areasRef}
+									className="absolute left-0 top-full mt-2 w-56 rounded-md bg-neutral-900 border border-neutral-800 p-2 text-sm z-50 shadow-lg"
+								>
+									{serviceAreas.map((c) => (
+										<button
+											key={c}
+											type="button"
+											onClick={() => setShowAreas(false)}
+											className="block w-full text-left px-2 py-1 text-neutral-200 hover:bg-neutral-800 rounded"
+										>
+											{c}
+										</button>
+									))}
+								</div>
+							) : null}
+						</div>
 					</div>
 
 					<div className="flex items-center gap-3">
@@ -153,7 +215,16 @@ export default function Navbar() {
 							>
 								Zadzwoń: {phoneDisplay}
 							</a>
-							<div className="mt-2 text-xs text-neutral-400 text-center">Obsługujemy: {locationDisplay}</div>
+							<div className="mt-2 text-xs text-neutral-400 text-center">
+								Obsługujemy:
+								<div className="mt-1 grid grid-cols-2 gap-1 text-neutral-200 text-sm">
+									{serviceAreas.map((c) => (
+										<div key={c} className="px-2 py-1">
+											{c}
+										</div>
+									))}
+								</div>
+							</div>
 						</li>
 
 						{items.map((item) => {

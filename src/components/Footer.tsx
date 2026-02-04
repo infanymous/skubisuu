@@ -28,10 +28,10 @@ const Footer: React.FC = () => {
                         <div>
                             <div className="text-sm font-semibold text-neutral-100">Nawigacja</div>
                             <ul className="mt-3 space-y-2 text-neutral-300">
-                                <li><Link className="hover:text-secondary" href="/">Home</Link></li>
-                                <li><Link className="hover:text-secondary" href="/about">About</Link></li>
-                                <li><Link className="hover:text-secondary" href="/gallery">Gallery</Link></li>
-                                <li><Link className="hover:text-secondary" href="/contact">Contact</Link></li>
+                                <li><Link className="hover:text-secondary" href="/">Start</Link></li>
+                                <li><Link className="hover:text-secondary" href="/about">Oferta</Link></li>
+                                <li><Link className="hover:text-secondary" href="/gallery">Galeria</Link></li>
+                                <li><Link className="hover:text-secondary" href="/contact">Kontakt</Link></li>
                             </ul>
                         </div>
                     </div>
