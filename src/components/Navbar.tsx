@@ -73,12 +73,12 @@ export default function Navbar() {
 						onClick={() => setIsOpen(false)}
 					>
 						<Image
-							src="/images/brand/logo2.png"
+							src="images/brand/logo2.png"
 							alt="Logo"
 							width={520}
 							height={520}
 							priority
-							className="absolute left-0 top-[calc(100%+8px)] h-20 sm:h-24 md:h-32 w-auto -translate-x-4 sm:-translate-x-6 md:-translate-x-8 -translate-y-1/2 drop-shadow-lg"
+							className="absolute left-[calc(100%-15em)] top-[calc(100%+1em)] h-20 sm:h-24 md:h-32 w-auto -translate-x-4 sm:-translate-x-6 md:-translate-x-8 -translate-y-1/2 drop-shadow-lg"
 						/>
 					</Link>
 				</div>
