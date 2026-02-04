@@ -1,7 +1,7 @@
 "use client";
 
 import Image from 'next/image';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 export type GalleryImage = {
 	src: string;
@@ -19,6 +19,9 @@ export default function GalleryGrid({ images }: Props) {
 	const active = useMemo(() => (activeIndex === null ? null : images[activeIndex]), [activeIndex, images]);
 
 	const close = useCallback(() => setActiveIndex(null), []);
+
+	const containerRef = useRef<HTMLDivElement | null>(null);
+	const closeBtnRef = useRef<HTMLButtonElement | null>(null);
 
 	const prev = useCallback(() => {
 		setActiveIndex((current) => {
@@ -44,12 +47,15 @@ export default function GalleryGrid({ images }: Props) {
 		};
 
 		document.addEventListener('keydown', onKeyDown);
-		const previousOverflow = document.body.style.overflow;
-		document.body.style.overflow = 'hidden';
+
+		// ensure modal container is scrolled to top on open (mobile) and focus close
+		setTimeout(() => {
+			containerRef.current?.scrollTo?.({ top: 0, behavior: 'auto' });
+			closeBtnRef.current?.focus?.();
+		}, 0);
 
 		return () => {
 			document.removeEventListener('keydown', onKeyDown);
-			document.body.style.overflow = previousOverflow;
 		};
 	}, [close, isOpen, next, prev]);
 
@@ -80,12 +86,13 @@ export default function GalleryGrid({ images }: Props) {
 
 			{isOpen && active ? (
 				<div
-					className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm"
+					className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm pointer-events-auto"
 					role="dialog"
 					aria-modal="true"
-					onMouseDown={(e) => {
+					onClick={(e) => {
 						if (e.target === e.currentTarget) close();
 					}}
+					style={{ touchAction: 'auto' }}
 				>
 					<div className="absolute top-4 right-4 flex items-center gap-2">
 						<button
@@ -119,14 +126,22 @@ export default function GalleryGrid({ images }: Props) {
 						</button>
 					</div>
 
-					<div className="mx-auto flex h-full w-full items-center justify-center px-4 py-10">
-						<div className="relative h-[82vh] w-[92vw] max-w-6xl">
+					<div ref={containerRef} className="mx-auto flex h-full w-full items-start sm:items-center justify-center px-4 py-10 overflow-auto">
+						<div className="relative h-[60vh] sm:h-[82vh] w-[92vw] max-w-6xl">
+							<button
+								type="button"
+								onClick={close}
+								ref={closeBtnRef}
+								className="absolute top-2 right-2 z-20 block rounded-md border border-neutral-700 bg-neutral-950/70 px-3 py-1.5 text-sm font-semibold text-neutral-100 hover:bg-neutral-900 sm:hidden"
+							>
+								Close
+							</button>
 							<Image
 								src={active.src}
 								alt={active.alt}
 								fill
 								sizes="92vw"
-								className="object-contain"
+								className="object-contain pointer-events-auto"
 								priority
 							/>
 						</div>

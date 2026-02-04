@@ -68,7 +68,7 @@ export default function Navbar() {
 				<div className="flex items-center gap-3">
 					<Link
 						href="/"
-						className="relative z-10 block h-10 w-44 sm:w-56 md:w-64 overflow-visible -ml-4 sm:-ml-8 md:-ml-12"
+						className="relative z-10 block h-10 w-44 sm:w-56 md:w-64 overflow-visible ml-0 sm:-ml-8 md:-ml-12"
 						aria-label="My Company home"
 						onClick={() => setIsOpen(false)}
 					>
@@ -78,7 +78,7 @@ export default function Navbar() {
 							width={520}
 							height={520}
 							priority
-							className="absolute left-[calc(100%-15em)] top-[calc(100%+1em)] h-20 sm:h-24 md:h-32 w-auto -translate-x-4 sm:-translate-x-6 md:-translate-x-8 -translate-y-1/2 drop-shadow-lg"
+							className="relative h-10 sm:absolute sm:left-[calc(100%-15em)] sm:top-[calc(100%+1em)] sm:h-24 md:h-32 w-auto sm:-translate-x-6 md:-translate-x-8 sm:-translate-y-1/2 drop-shadow-lg"
 						/>
 					</Link>
 				</div>
