@@ -37,7 +37,7 @@ export default function Navbar() {
 	const items: NavItem[] = useMemo(
 		() => [
 			{ label: 'Start', href: '/' },
-			{ label: 'O nas', href: '/about' },
+			{ label: 'Oferta', href: '/about' },
 			{ label: 'Galeria', href: '/gallery' },
 			{ label: 'Kontakt', href: '/contact' },
 		],
