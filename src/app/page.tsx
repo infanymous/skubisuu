@@ -131,6 +131,26 @@ export default function HomePage() {
 
                         <ServiceTiles />
 
+                        <div className="mt-8 rounded-2xl border border-neutral-800 bg-neutral-900/40 px-6 py-6">
+                            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                                <div>
+                                    <div className="text-xs font-semibold text-neutral-400">Oferujemy także:</div>
+                                    <div className="mt-1 text-xl font-bold text-neutral-50">Wynajem lawet</div>
+                                    <p className="mt-2 text-neutral-300 max-w-3xl">
+                                        Potrzebujesz lawety na wynajem? Sprawdź naszą flotę i podstawową specyfikację pojazdów.
+                                    </p>
+                                </div>
+                                <div className="shrink-0">
+                                    <Link
+                                        href="/about#wynajem-lawet"
+                                        className="inline-flex items-center justify-center rounded-md border border-neutral-700 bg-neutral-950/30 px-5 py-3 text-neutral-100 font-semibold hover:bg-neutral-900"
+                                    >
+                                        Zobacz flotę →
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+
                         <div className="mt-10 rounded-2xl border border-secondary/30 bg-secondary/10 px-6 py-6">
                         <p className="text-neutral-200 text-lg leading-relaxed">
                             Działamy szybko i niezawodnie, dbając o bezpieczeństwo Twojego pojazdu. Nasze doświadczenie i

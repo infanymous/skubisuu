@@ -57,7 +57,7 @@ const AboutPage = () => {
                     </div>
 
                     <div className="mt-10">
-                        <h2 className="text-2xl sm:text-3xl font-bold text-neutral-50">
+                        <h2 id="wynajem-lawet" className="scroll-mt-28 text-2xl sm:text-3xl font-bold text-neutral-50">
                             Wynajem lawet
                         </h2>
                         <p className="mt-3 text-neutral-300 leading-relaxed max-w-3xl">
