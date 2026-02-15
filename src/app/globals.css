@@ -51,11 +51,19 @@
     }
 
     .gallery-images {
-        @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4;
+        /* Masonry-like layout (no empty grid gaps) */
+        @apply columns-1 sm:columns-2 md:columns-3;
+        column-gap: 1rem;
     }
 
-    .gallery-images img {
+    .gallery-item {
+        break-inside: avoid;
+        @apply mb-4;
+    }
+
+    .gallery-image {
         @apply w-full h-auto rounded-md border border-neutral-800 bg-neutral-900;
+        display: block;
     }
 
     /* Contact form */

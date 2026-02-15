@@ -79,15 +79,16 @@ export default async function GalleryPage() {
                 ) : (
                     <div className="gallery-images">
                         {images.map((img) => (
-                            <Image
-                                key={img.src}
-                                src={img.src}
-                                alt={img.alt}
-                                width={1200}
-                                height={900}
-                                className="w-full h-auto"
-                                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
-                            />
+                            <div key={img.src} className="gallery-item">
+                                <Image
+                                    src={img.src}
+                                    alt={img.alt}
+                                    width={1200}
+                                    height={900}
+                                    className="gallery-image"
+                                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+                                />
+                            </div>
                         ))}
                     </div>
                 )}
