@@ -1,5 +1,7 @@
 import type { MetadataRoute } from 'next';
 
+export const dynamic = 'force-static';
+
 const DEFAULT_SITE_URL = 'https://infanymous.github.io/skubisuu';
 
 function getSiteUrl() {

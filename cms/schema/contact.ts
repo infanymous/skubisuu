@@ -1,27 +1,55 @@
-export default {
+import { defineField, defineType } from 'sanity';
+
+export default defineType({
   name: 'contact',
-  title: 'Contact',
+  title: 'Kontakt',
   type: 'document',
   fields: [
-    {
-      name: 'address',
-      title: 'Address',
+    defineField({
+      name: 'pillTitle',
+      title: 'Pigułka (tytuł)',
       type: 'string',
-    },
-    {
-      name: 'phone',
-      title: 'Phone Number',
+      initialValue: 'Kontakt',
+    }),
+    defineField({
+      name: 'pillSubtitle',
+      title: 'Pigułka (podtytuł)',
       type: 'string',
-    },
-    {
-      name: 'email',
-      title: 'Email Address',
+      initialValue: 'jesteśmy dostępni 24/7',
+    }),
+    defineField({
+      name: 'title',
+      title: 'Nagłówek strony',
       type: 'string',
-    },
-    {
-      name: 'message',
-      title: 'Message',
-      type: 'text',
-    },
+      initialValue: 'Skontaktuj się z nami',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'paragraphs',
+      title: 'Tekst (akapity)',
+      type: 'array',
+      of: [{ type: 'text' }],
+      validation: (Rule) => Rule.min(1),
+    }),
+    defineField({
+      name: 'phoneDisplay',
+      title: 'Telefon (wyświetlany)',
+      type: 'string',
+    }),
+    defineField({
+      name: 'phoneHref',
+      title: 'Telefon (href tel:)',
+      type: 'string',
+    }),
+    defineField({
+      name: 'googleReviewsUrl',
+      title: 'Link do opinii Google',
+      type: 'url',
+    }),
+    defineField({
+      name: 'mapEmbedUrl',
+      title: 'Mapa (URL embed dla iframe)',
+      type: 'url',
+    }),
   ],
-};
+});

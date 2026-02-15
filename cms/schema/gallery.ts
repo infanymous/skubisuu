@@ -2,18 +2,18 @@ import { defineType } from 'sanity';
 
 export default defineType({
   name: 'gallery',
-  title: 'Gallery',
+  title: 'Galeria',
   type: 'document',
   fields: [
     {
       name: 'title',
-      title: 'Title',
+      title: 'Tytuł',
       type: 'string',
       validation: Rule => Rule.required(),
     },
     {
       name: 'images',
-      title: 'Images',
+      title: 'Zdjęcia',
       type: 'array',
       of: [{ type: 'image' }],
       options: {
@@ -23,7 +23,7 @@ export default defineType({
     },
     {
       name: 'description',
-      title: 'Description',
+      title: 'Opis',
       type: 'text',
     },
   ],
