@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
 const AboutPage = () => {
-    const phoneDisplay = '+48 123 456 789';
-    const phoneHref = 'tel:+48123456789';
+    const phoneDisplay = '+48 606 885 604';
+    const phoneHref = 'tel:+48606885604';
 
     const fleet = [
         {

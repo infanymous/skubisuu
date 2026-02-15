@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
 const Footer: React.FC = () => {
-	const phoneDisplay = '+48 123 456 789';
-	const phoneHref = 'tel:+48123456789';
+	const phoneDisplay = '+48 606 885 604';
+	const phoneHref = 'tel:+48606885604';
 	const locationDisplay = 'Kraków, Małopolskie';
 	const mapsHref =
 		'https://www.google.com/maps/search/?api=1&query=Krak%C3%B3w%2C%20Ma%C5%82opolskie';

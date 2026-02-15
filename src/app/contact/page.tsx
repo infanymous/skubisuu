@@ -1,11 +1,11 @@
 import React from 'react';
 
 const ContactPage = () => {
-    const phoneDisplay = '+48 123 456 789';
-    const phoneHref = 'tel:+48123456789';
+    const phoneDisplay = '+48 606 885 604';
+    const phoneHref = 'tel:+48606885604';
     const locationDisplay = 'Kraków, Małopolskie';
     const mapsHref =
-        'https://www.google.com/maps/search/?api=1&query=Krak%C3%B3w%2C%20Ma%C5%82opolskie';
+        'https://share.google/Uh2IHPvTlAyPnDzN2';
 
     return (
         <div className="contact-page">
@@ -19,17 +19,19 @@ const ContactPage = () => {
                     Skontaktuj się z nami
                 </h1>
                 <p className="mt-4 text-lg font-semibold text-neutral-300 max-w-3xl">
-                    Jeśli potrzebujesz pomocy na drodze — zadzwoń! Zawsze jesteśmy dostępni, aby Ci pomóc.
+                    Jeśli potrzebujesz pomocy na drodze — zadzwoń! Zawsze jesteśmy dostępni, aby Ci pomóc. 
                 </p>
                 <p className="mt-4 text-lg font-semibold text-neutral-300 max-w-3xl">
-                    Jeśli potrzebujesz pomocy na drodze — zadzwoń! Zawsze jesteśmy dostępni, aby Ci pomóc.
+                    Szukasz lawety na wynajem? Chcesz dowiedzieć się więcej o naszych usługach? Skontaktuj się z nami telefonicznie lub przez formularz kontaktowy poniżej. 
                 </p>
-
+                <p className="mt-4 text-lg font-semibold text-neutral-300 max-w-3xl">
+                    Zapraszamy również do sprawdzenia opinii o nas w Google -&gt; <a href={mapsHref} className="text-secondary underline">tutaj</a>. Zdania klientów mówią same za siebie, zapraszamy!
+                </p>
                 <div className="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-6">
                     <div className="lg:col-span-2 rounded-3xl border border-neutral-800 bg-neutral-950/60 backdrop-blur-sm px-6 py-8 shadow-sm">
                         <form>
                             <div>
-                                <label htmlFor="name">Name:</label>
+                                <label htmlFor="name">Imię:</label>
                                 <input type="text" id="name" name="name" required />
                             </div>
                             <div>
@@ -37,10 +39,10 @@ const ContactPage = () => {
                                 <input type="email" id="email" name="email" required />
                             </div>
                             <div>
-                                <label htmlFor="message">Message:</label>
+                                <label htmlFor="message">Wiadomość:</label>
                                 <textarea id="message" name="message" required></textarea>
                             </div>
-                            <button type="submit">Send Message</button>
+                            <button type="submit">Wyślij wiadomość</button>
                         </form>
                     </div>
 
@@ -52,10 +54,6 @@ const ContactPage = () => {
                                 <a className="font-semibold text-primary hover:underline" href={phoneHref}>
                                     {phoneDisplay}
                                 </a>
-                            </div>
-                            <div>
-                                <div className="text-xs text-neutral-500">Obszar działania</div>
-                                <div className="font-semibold text-neutral-100">{locationDisplay}</div>
                             </div>
                             <div>
                                 <a
