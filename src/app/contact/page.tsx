@@ -1,5 +1,13 @@
 import React from 'react';
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'Kontakt',
+    description:
+        'Kontakt do Skubisuu Racing & Rent: pomoc drogowa 24/7, holowanie oraz wynajem lawet. Zadzwoń lub napisz przez formularz.',
+};
+
 const ContactPage = () => {
     const phoneDisplay = '+48 606 885 604';
     const phoneHref = 'tel:+48606885604';

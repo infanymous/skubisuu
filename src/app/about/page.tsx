@@ -1,5 +1,13 @@
 import Link from 'next/link';
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'Oferta',
+    description:
+        'Poznaj ofertę Skubisuu Racing & Rent: pomoc drogowa 24/7, holowanie oraz wynajem lawet. Zobacz flotę i podstawowe specyfikacje.',
+};
+
 const AboutPage = () => {
     const phoneDisplay = '+48 606 885 604';
     const phoneHref = 'tel:+48606885604';

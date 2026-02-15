@@ -8,3 +8,5 @@ User-agent: *
 Disallow: /api/
 Disallow: /cms/
 Allow: /
+
+Sitemap: https://infanymous.github.io/skubisuu/sitemap.xml

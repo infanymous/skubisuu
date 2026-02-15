@@ -1,6 +1,14 @@
 import Link from 'next/link';
 import ServiceTiles from '../components/ServiceTiles';
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'Pomoc drogowa 24/7',
+    description:
+        'Pomoc drogowa 24/7, holowanie oraz wynajem lawet. Działamy szybko i bezpiecznie w okolicy: Sławków, Bolesław, Bukowno, Klucze, Olkusz, Dąbrowa Górnicza.',
+};
+
 export default function HomePage() {
     const phoneDisplay = '+48 606 885 604';
     const phoneHref = 'tel:+48606885604';
