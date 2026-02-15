@@ -62,7 +62,7 @@ export default function Navbar() {
 						{/* Desktop / tablet: inline mini-list */}
 						<div className="hidden sm:flex items-center gap-3 min-w-0">
 							<span className="font-semibold text-neutral-300 whitespace-nowrap text-sm leading-tight">Pomoc drogowa •</span>
-							<ul className="flex items-center gap-2 whitespace-nowrap overflow-x-auto">
+							<ul className="flex items-center gap-2 whitespace-nowrap overflow-x-auto overflow-y-hidden no-scrollbar">
 								{serviceAreas.map((c, i) => (
 									<li key={c} className="text-neutral-300 text-sm inline-flex items-center gap-2 leading-tight">
 										<span className="whitespace-nowrap leading-tight">{c}</span>

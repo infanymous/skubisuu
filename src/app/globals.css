@@ -94,6 +94,16 @@
 }
 
 @layer utilities {
+    /* Hide scrollbars while keeping scroll behavior (use sparingly) */
+    .no-scrollbar {
+        -ms-overflow-style: none; /* IE/Edge legacy */
+        scrollbar-width: none; /* Firefox */
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+        display: none; /* Chrome/Safari */
+    }
+
     @keyframes gradient-shift {
         0% { background-position: 0% 50%; }
         50% { background-position: 100% 50%; }
