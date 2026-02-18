@@ -2,3 +2,4 @@
 .next/
 out/
 /out/
+.env.example

@@ -6,10 +6,23 @@ export default defineType({
   type: 'document',
   fields: [
     {
+      name: 'pillTitle',
+      title: 'Pigułka (tytuł)',
+      type: 'string',
+      initialValue: 'Galeria',
+    },
+    {
+      name: 'pillSubtitle',
+      title: 'Pigułka (podtytuł)',
+      type: 'string',
+      initialValue: 'nasze realizacje',
+    },
+    {
       name: 'title',
       title: 'Tytuł',
       type: 'string',
       validation: Rule => Rule.required(),
+      initialValue: 'Zobacz nasze realizacje',
     },
     {
       name: 'images',
@@ -25,6 +38,7 @@ export default defineType({
       name: 'description',
       title: 'Opis',
       type: 'text',
+      initialValue: 'Kilka zdjęć z naszej pracy — holowanie, pomoc drogowa i transport.',
     },
   ],
 });
