@@ -1,0 +1,78 @@
+name: Deploy (Hostinger)
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: "Optional note for this deploy"
+        required: false
+        type: string
+  repository_dispatch:
+    types:
+      - sanity_publish
+
+concurrency:
+  group: hostinger-deploy
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      # Site settings
+      NEXT_PUBLIC_SITE_URL: ${{ secrets.SITE_URL }}
+      NEXT_PUBLIC_BASE_PATH: "" # Hostinger usually serves at domain root
+
+      # Sanity (public identifiers; keep in Secrets anyway)
+      NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ secrets.SANITY_PROJECT_ID }}
+      NEXT_PUBLIC_SANITY_DATASET: ${{ secrets.SANITY_DATASET }}
+      NEXT_PUBLIC_SANITY_API_VERSION: ${{ secrets.SANITY_API_VERSION }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Build (static export)
+        run: npm run build
+
+      - name: Sanity check output
+        run: test -d out
+
+      - name: Install lftp (SFTP client)
+        run: sudo apt-get update && sudo apt-get install -y lftp
+
+      - name: Deploy out/ to Hostinger via SFTP
+        env:
+          HOST: ${{ secrets.HOSTINGER_SFTP_HOST }}
+          PORT: ${{ secrets.HOSTINGER_SFTP_PORT }}
+          USER: ${{ secrets.HOSTINGER_SFTP_USERNAME }}
+          PASS: ${{ secrets.HOSTINGER_SFTP_PASSWORD }}
+          REMOTE_DIR: ${{ secrets.HOSTINGER_SFTP_REMOTE_DIR }}
+        run: |
+          if [ -z "${HOST}" ]; then echo "Missing HOSTINGER_SFTP_HOST"; exit 1; fi
+          if [ -z "${USER}" ]; then echo "Missing HOSTINGER_SFTP_USERNAME"; exit 1; fi
+          if [ -z "${PASS}" ]; then echo "Missing HOSTINGER_SFTP_PASSWORD"; exit 1; fi
+          if [ -z "${REMOTE_DIR}" ]; then echo "Missing HOSTINGER_SFTP_REMOTE_DIR"; exit 1; fi
+          if [ -z "${PORT}" ]; then PORT=22; fi
+
+          lftp -c "
+            set net:max-retries 2;
+            set net:timeout 20;
+            set sftp:auto-confirm yes;
+            open -u \"${USER}\",\"${PASS}\" sftp://${HOST}:${PORT};
+            mirror -R --delete --verbose=2 out/ \"${REMOTE_DIR}\";
+            bye
+          "
